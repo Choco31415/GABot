@@ -1,10 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+	<classpathentry kind="src" output="bin/main" path="src/main/java">
 		<attributes>
-			<attribute name="module" value="true"/>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" output="bin/main" path="src/main/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/org.jfree/jfreechart/1.5.5/4147651ba863c28090a585a6f1e91c7a9bcc1f12/jfreechart-1.5.5.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/org.jfree/jfreechart/1.5.5/40e33aa3f76203c6d0ff74fb777962339d0f1484/jfreechart-1.5.5-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-analyticsreporting/v4-rev174-1.25.0/ddaabcedfbcedd02b3ba3711bd2a899f4241c6d5/google-api-services-analyticsreporting-v4-rev174-1.25.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-analyticsreporting/v4-rev174-1.25.0/4bd03fc79a6e5bd57c303fd99ec6854e9c3048f0/google-api-services-analyticsreporting-v4-rev174-1.25.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/2.7.0/59c8e5e3c03f146561a83051af3ca945d40e02c6/google-api-client-2.7.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/2.7.0/12012e8ddb6e10c4f847c4f5742e7dd260850323/google-api-client-2.7.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-apache-v2/1.45.0/d498279ce392b8b970a33e356498cf41164f2811/google-http-client-apache-v2-1.45.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-apache-v2/1.45.0/ec099316011d612399be84ccc20d3260ae884400/google-http-client-apache-v2-1.45.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.36.0/dc3f07bc8f49dd52fe8fcc15958f3cfeb003e20f/google-oauth-client-1.36.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.36.0/658c885ae648a1c7170656ab9dee1be0e36772e1/google-oauth-client-1.36.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-oauth2-http/1.23.0/f9ebd75a55b8e2cfa62e1f66d04a62b46a2f3b70/google-auth-library-oauth2-http-1.23.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-oauth2-http/1.23.0/a2ceea7246ecf491fd3c1694d4581a0737fae688/google-auth-library-oauth2-http-1.23.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-gson/1.45.0/98af6041ca1d4654a2210cf1c6c06a9401ac6c90/google-http-client-gson-1.45.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-gson/1.45.0/513da359c5dc7b41e2ad0c222057826208ae5f03/google-http-client-gson-1.45.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.45.0/63eb7643e01797d6aa67c75ae31ffcc6c365db18/google-http-client-1.45.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.45.0/6dc3202aa0df0402fac0a39f4ced59e17a7414e7/google-http-client-1.45.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.14/1194890e6f56ec29177673f2f12d0b8e627dec98/httpclient-4.5.14.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.14/14321a360aa0e037c56d4c820747a84954d9196e/httpclient-4.5.14-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.17.0/dbe8eef6e14460e73da07f7b11bf994d6626355/commons-codec-1.17.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.17.0/63cf61522da956c3db58ffdbcde99a603bf6f6d/commons-codec-1.17.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/1.23.0/a50ee3611922a0eea9d421c6ddb1db031972a7dc/google-auth-library-credentials-1.23.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/1.23.0/c0c7a490b594a389e11cc20c3e99023a40b2bca7/google-auth-library-credentials-1.23.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-contrib-http-util/0.31.1/3c13fc5715231fadb16a9b74a44d9d59c460cfa8/opencensus-contrib-http-util-0.31.1.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-contrib-http-util/0.31.1/1c6d09598fff894dfc4bfd03aeb68417d1176374/opencensus-contrib-http-util-0.31.1-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.1.0-jre/9b7ed39143d59e8eabcc6f91ffe4d23db2efe558/guava-33.1.0-jre.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.1.0-jre/d387b5accef736533f994567b6d7d000d330bab6/guava-33.1.0-jre-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/51cf043c87253c9f58b539c9f7e44c8894223850/httpcore-4.4.16.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/229e4c0eae80465381ae02adf61bca5558360777/httpcore-4.4.16-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.auto.value/auto-value-annotations/1.10.4/9679de8286eb0a151db6538ba297a8951c4a1224/auto-value-annotations-1.10.4.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.auto.value/auto-value-annotations/1.10.4/5f89a1225fd0220207a78cc3fae96bb9a788adc0/auto-value-annotations-1.10.4-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/b19b5927c2c25b6c70f093767041e641ae0b1b35/jsr305-3.0.2-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.30.0/ff171acb7fb9cbe2b9f50b391e1d52459d30ee62/error_prone_annotations-2.30.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.30.0/5fd807da9cc296152cdc37b1692a6f7616d6b2c5/error_prone_annotations-2.30.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.11.0/527175ca6d81050b53bdd4c457a6d6e017626b0e/gson-2.11.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.11.0/bbd772a8634d3d6fea7ffea693535a4bd1c773c0/gson-2.11.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.2/c4a06a64e650562f30b7bf9aaec1bfed43aca12b/failureaccess-1.0.2.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.2/6acdafcf2dfc3b548e59dd3a4b454552aeb6ff65/failureaccess-1.0.2-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.42.0/638ec33f363a94d41a4f03c3e7d3dcfba64e402d/checker-qual-3.42.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.42.0/49cc9a760cebbbcd13be06679a224a1ecc85f884/checker-qual-3.42.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/3.0.0/7399e65dd7e9ff3404f4535b2f017093bdb134c7/j2objc-annotations-3.0.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/3.0.0/e6e870c6faf70867a723848b036607cd7d389621/j2objc-annotations-3.0.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-api/0.31.1/66a60c7201c2b8b20ce495f0295b32bb0ccbbc57/opencensus-api-0.31.1.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-api/0.31.1/2473574e7bd949d01193671f814872074b4c7015/opencensus-api-0.31.1-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.66.0/403469f70be9b9add6b670d37975f31660a8d382/grpc-context-1.66.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.66.0/3b1b3700a83d54cc478a11177e9468b986e827e5/grpc-context-1.66.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-api/1.66.0/a2d48c8f3d22296c4a9e71a42b3ba457717889b3/grpc-api-1.66.0.jar" sourcepath="/Users/ErnieParke/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-api/1.66.0/807cb09afe35d0dca7c20dd352a620f465edce9e/grpc-api-1.66.0-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/JavaMediawikiBot"/>
+	<classpathentry kind="output" path="bin/default"/>
 </classpath>

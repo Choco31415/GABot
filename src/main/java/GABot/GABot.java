@@ -1,4 +1,4 @@
-package WikiBot;
+package GABot;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -53,14 +53,13 @@ import com.google.api.services.analyticsreporting.v4.model.Report;
 import com.google.api.services.analyticsreporting.v4.model.ReportRequest;
 import com.google.api.services.analyticsreporting.v4.model.ReportRow;
 
-import WikiBot.APIcommands.EditPage;
-import WikiBot.APIcommands.EditSection;
-import WikiBot.ContentRep.*;
-import WikiBot.Core.GenericBot;
-import WikiBot.Utils.FileUtils;
+import APIcommands.EditPage; // Figure out how to add this to gradle build path versus Eclipse settings
+import APIcommands.EditSection;
+import Content.*;
+import Utils.FileUtils;
+import WikiBot.MediawikiBot;
 
-
-public class GABot extends GenericBot {
+public class GABot {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -94,15 +93,16 @@ public class GABot extends GenericBot {
 	 * This is where I initialize my custom Mediawiki bot.
 	 */
 	public GABot() {
-		super("Scratch", "en");
+		Path familyFile = Paths.get("src/main/resources/ScratchFamily.txt");
+		
+		MediawikiBot bot = new MediawikiBot(familyFile, "en");
 		
 		//Preferences
-		APIlimit = 30;//The amount of items to get per query call, if there are multiple items.
-		getRevisions = false;//Don't get page revisions.
+		bot.queryLimit = 30;
+		bot.getRevisionContent = false;
+		bot.APIdelay = 0.5;
 		
-		APIthrottle = 0.5;//Minimum time between any API commands.
-		
-		setLoggerLevel(Level.FINE);//How fine should the logger be? Visit NetworkingBase.java for logger level info.
+		bot.setLoggerLevel(Level.FINE);//How fine should the logger be? Visit NetworkingBase.java for logger level info.
 		
 		botPropFile = "/BotProperties.properties";
 		
