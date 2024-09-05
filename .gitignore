@@ -190,4 +190,4 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 ### Project Files ###
-
+src/main/resources/InterwikiService.json

@@ -85,7 +85,7 @@ public class GABot {
 	private static String timezone;
 	
 	// For Google Analytics
-	private static final String KEY_FILE_LOCATION = "/InterwikiService.json";
+	private static final String KEY_FILE_LOCATION = "src/main/resources/InterwikiService.json";
 	private static final String APPLICATION_NAME = "interwiki";
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 	
@@ -102,13 +102,13 @@ public class GABot {
 		bot.getRevisionContent = false;
 		bot.APIdelay = 0.5;
 		
-		bot.setLoggerLevel(Level.FINE);//How fine should the logger be? Visit NetworkingBase.java for logger level info.
+		bot.setLoggerLevel(Level.FINE); // How fine should the logger be? Visit NetworkingBase.java for logger level info.
 		
 		botPropFile = "/BotProperties.properties";
 		
 		defaultStatsPage = "/GAPageDefault.txt";
 
-		wikiViews.put("de", "63671826");// wiki and its corresponding view id.
+		wikiViews.put("de", "63671826"); // wiki and its corresponding view id.
 		wikiViews.put("en", "172738445");
 		wikiViews.put("fr", "153835435");
 		wikiViews.put("hu", "153842565");
