@@ -20,7 +20,7 @@ import java.util.TimeZone;
 import java.util.logging.Level;
 
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.NumberAxis;
@@ -32,7 +32,7 @@ import org.jfree.chart.renderer.category.AreaRenderer;
 import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.ui.RectangleInsets;
+import org.jfree.chart.ui.RectangleInsets;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
@@ -89,20 +89,23 @@ public class GABot {
 	private static final String APPLICATION_NAME = "interwiki";
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 	
+	// MW bot
+	MediawikiBot bot;
+	
 	/*
 	 * This is where I initialize my custom Mediawiki bot.
 	 */
-	public GABot() {
+	public GABot() throws IOException {
 		Path familyFile = Paths.get("src/main/resources/ScratchFamily.txt");
 		
-		MediawikiBot bot = new MediawikiBot(familyFile, "en");
+		bot = new MediawikiBot(familyFile, "en");
 		
 		//Preferences
 		bot.queryLimit = 30;
 		bot.getRevisionContent = false;
 		bot.APIdelay = 0.5;
 		
-		bot.setLoggerLevel(Level.FINE); // How fine should the logger be? Visit NetworkingBase.java for logger level info.
+		// setLoggerLevel(Level.FINE); // How fine should the logger be? Visit NetworkingBase.java for logger level info.
 		
 		botPropFile = "/BotProperties.properties";
 		
@@ -125,8 +128,6 @@ public class GABot {
 		
 		timezone = "Europe/Berlin";
 		
-		setLogPropagation(true);
-		
 		if (instance == null) {
 			instance = this;
 		} else {
@@ -134,22 +135,8 @@ public class GABot {
 		}
 	}
 	
-	/**
-	 * Get an instance of GenericBot.
-	 * @return
-	 */
-	public static GABot getInstance() {
-		if (instance == null) {
-			instance = new GABot();
-		}
-		
-		return instance;
-	}
-	
-	public static void main(String[] args) throws GeneralSecurityException, IOException, CloneNotSupportedException {
-		GABot b = getInstance();
-		
-		b.run();
+	public void main(String[] args) throws GeneralSecurityException, IOException, CloneNotSupportedException {
+		run();
 	}
 	
 	/**
@@ -176,7 +163,7 @@ public class GABot {
 		for (String wiki : wikiViews.keySet()) {
 			// Log in.
 			User user = new User(wiki, username);
-			boolean loggedIn = logIn(user, password);
+			boolean loggedIn = bot.logIn(user, password);
 			
 			if (!loggedIn) {
 				throw new Error("Didn't log into wiki: " + wiki);
@@ -185,15 +172,15 @@ public class GABot {
 				
 				// Initialize stats page, if needed.
 				PageLocation statsPageLoc = new PageLocation(wiki, GAstatPage);
-				if (!this.doesPageExist(statsPageLoc)) {
+				if (!bot.doesPageExist(statsPageLoc)) {
 					// Create the GA page.
 					EditPage command = new EditPage(statsPageLoc, newStatsPageText, "Creating page.");
-					APIcommand(command);
-					logInfo("Initialized page on wiki " + wiki + ".");
+					bot.APIcommand(command);
+					bot.logInfo("Initialized page on wiki " + wiki + ".");
 				}
 				
 				// Read in page for updating.
-				Page statsPage = getWikiPage(statsPageLoc);
+				Page statsPage = bot.getWikiPage(statsPageLoc, false);
 				
 				// Upload charts.
 				String[] filenames = gatherSiteStatisticsCharts(daysTracking, viewID, service);
@@ -205,8 +192,8 @@ public class GABot {
 					Path path = Paths.get(localFilename);
 					PageLocation uploadTo = new PageLocation(wiki, wikiFilename);
 					
-					this.uploadFile(uploadTo, path, "Updating statistic.", "A wiki statistic chart.");
-					logInfo("Upload file " + localFilename + " to wiki " + wiki + ".");
+					bot.uploadFile(uploadTo, path, "Updating statistic.", "A wiki statistic chart.");
+					bot.logInfo("Upload file " + localFilename + " to wiki " + wiki + ".");
 				}
 				
 				// Check that the GA page has all necessary images.
@@ -240,8 +227,8 @@ public class GABot {
 					}
 					
 					EditSection command = new EditSection(statsPageLoc, 1, sectionText, "Editing statistics tracked.");
-					APIcommand(command);
-					logInfo("Edited statistics images on wiki " + wiki + ".");
+					bot.APIcommand(command);
+					bot.logInfo("Edited statistics images on wiki " + wiki + ".");
 				}
 				
 				// Append popular pages.
@@ -260,8 +247,8 @@ public class GABot {
 				}
 				
 				EditSection command = new EditSection(statsPageLoc, 2, sectionText, "Updating popular pages.");
-				APIcommand(command);
-				logInfo("Updated popular pages on wiki " + wiki + ".");
+				bot.APIcommand(command);
+				bot.logInfo("Updated popular pages on wiki " + wiki + ".");
 			}
 		}
 	}
@@ -287,7 +274,7 @@ public class GABot {
 	public String readGApageDefault() {
 		String text = "";
 		
-		ArrayList<String> defaultTextArray = FileUtils.readFileAsList(defaultStatsPage, 0, false, false);
+		ArrayList<String> defaultTextArray = FileUtils.readFile(defaultStatsPage, 0, false, false); // ????
 		
 		for (String line : defaultTextArray) {
 			text += line + "\n";
@@ -404,7 +391,7 @@ public class GABot {
 	    int height = GRAPH_HEIGHT;   /* Height of the image */ 
 	    String filename = statName + ".png";
 	    File file = new File(filename); 
-	    ChartUtilities.saveChartAsPNG(file, lineChartObject, width ,height);
+	    ChartUtils.saveChartAsPNG(file, lineChartObject, width ,height);
 	    
 	    return file.getAbsolutePath();
 	}
