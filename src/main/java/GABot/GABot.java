@@ -272,15 +272,7 @@ public class GABot {
 	 * @return
 	 */
 	public String readGApageDefault() {
-		String text = "";
-		
-		ArrayList<String> defaultTextArray = FileUtils.readFile(defaultStatsPage, 0, false, false); // ????
-		
-		for (String line : defaultTextArray) {
-			text += line + "\n";
-		}
-		
-		return text;
+		return FileUtils.readFile(defaultStatsPage);
 	}
 
 	/***
