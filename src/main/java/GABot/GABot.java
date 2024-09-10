@@ -17,7 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
-import java.util.logging.Level;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
@@ -131,12 +130,27 @@ public class GABot {
 		if (instance == null) {
 			instance = this;
 		} else {
-			throw new ConcurrentModificationException();//There should not be more then one GenericBot!!!
+			throw new ConcurrentModificationException(); // There should not be more then one GenericBot!
 		}
 	}
 	
-	public void main(String[] args) throws GeneralSecurityException, IOException, CloneNotSupportedException {
-		run();
+	/**
+	 * Get an instance of GenericBot.
+	 * If GenericBot has not been instantiated yet, the
+	 * family and homeWikiLanguage are both set to null.
+	 * @return
+	 * @throws IOException 
+	 */
+	public static GABot getInstance() throws IOException {
+		if (instance == null) {
+			instance = new GABot();
+		}
+		
+		return instance;
+	}
+	
+	public static void main(String[] args) throws GeneralSecurityException, IOException, CloneNotSupportedException {
+		getInstance().run();
 	}
 	
 	/**
